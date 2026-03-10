@@ -4,6 +4,7 @@ import com.fasterxml.jackson.annotation.JsonIgnoreProperties
 
 // ── Integrations ──────────────────────────────────────────────────────────────
 
+@JsonIgnoreProperties(ignoreUnknown = true)
 @Suppress("ConstructorParameterNaming")
 data class NovuIntegration(
     val _id: String? = null,
@@ -15,11 +16,12 @@ data class NovuIntegration(
     val credentials: NovuSlackCredentials? = null,
 )
 
+@JsonIgnoreProperties(ignoreUnknown = true)
 data class NovuSlackCredentials(
-    val clientId: String,
-    val secretKey: String,
-    val applicationId: String,
-    val token: String,
+    val clientId: String = "",
+    val secretKey: String = "",
+    val applicationId: String = "",
+    val token: String = "",
 )
 
 // ── Workflows ─────────────────────────────────────────────────────────────────
@@ -55,6 +57,7 @@ data class NovuStepTemplate(
 
 // ── Channel Connections ───────────────────────────────────────────────────────
 
+@JsonIgnoreProperties(ignoreUnknown = true)
 data class NovuChannelConnection(
     val identifier: String? = null,
     val providerId: String? = null,
@@ -64,17 +67,20 @@ data class NovuChannelConnection(
     val auth: NovuConnectionAuth? = null,
 )
 
+@JsonIgnoreProperties(ignoreUnknown = true)
 data class NovuWorkspace(
-    val id: String,
-    val name: String,
+    val id: String = "",
+    val name: String = "",
 )
 
+@JsonIgnoreProperties(ignoreUnknown = true)
 data class NovuConnectionAuth(
-    val accessToken: String,
+    val accessToken: String = "",
 )
 
 // ── Channel Endpoints ─────────────────────────────────────────────────────────
 
+@JsonIgnoreProperties(ignoreUnknown = true)
 data class NovuChannelEndpoint(
     val identifier: String? = null,
     val subscriberId: String? = null,
@@ -86,8 +92,9 @@ data class NovuChannelEndpoint(
 
 // ── Subscribers ───────────────────────────────────────────────────────────────
 
+@JsonIgnoreProperties(ignoreUnknown = true)
 data class NovuSubscriber(
-    val subscriberId: String,
+    val subscriberId: String = "",
     val firstName: String? = null,
     val lastName: String? = null,
 )
